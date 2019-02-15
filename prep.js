@@ -8,9 +8,9 @@ function twoNumberSum(array, targetSum) {
     for (let i = 0; i < array.length; i++) {
         tar = targetSum - array[i];
         if (sums.has(tar)) {
-            tar > array[i] ? twos.push(array[i], tar) : twos.push(tar, array[i])
+            tar > array[i] ? twos.push(array[i], tar) : twos.push(tar, array[i]);
         }
-        sums.add(array[i])
+        sums.add(array[i]);
     }
     return twos;
 }
@@ -19,3 +19,19 @@ function twoNumberSum(array, targetSum) {
 exports.twoNumberSum = twoNumberSum;
 
 
+
+function recSum(nums) {
+    if (nums.length < 1) return 0;
+
+    return nums[0] + recSum(nums.slice(1))
+}
+
+// Implement a method that finds the sum of the first n
+// fibonacci numbers recursively. Assume n > 0
+
+function fibsSum(n) {
+    if (n === 1) return 1;
+    if (n === 2) return 2;
+
+    return fibsSum(n - 1) + fibsSum(n - 2) + 1;
+}
