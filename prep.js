@@ -35,3 +35,15 @@ function fibsSum(n) {
 
     return fibsSum(n - 1) + fibsSum(n - 2) + 1;
 }
+
+function primeFactorization(num) {
+    if (num === 2) return [2];
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            let factors = [i].concat(primeFactorization(num / i))
+            return factors;
+        }
+    }
+    return [num];
+}
