@@ -64,3 +64,26 @@ Array.prototype.quickSort = function (comparator) {
     right = right.quickSort(comparator);
     return left.concat([pivot]).concat(right);
 };
+
+Array.prototype.bubbleSort = function (func) {
+    let newArr = this.slice();
+    let sorted = false;
+
+    if (!func) {
+        func = (x, y) => {
+            return x <= y ? -1 : 1
+        }
+    }
+
+    while (!sorted) {
+        sorted = true
+        for (let i = 0; i < newArr.length - 1; i++) {
+            if (func(newArr[i], newArr[i + 1]) === 1) {
+                sorted = false;
+                let current = newArr[i], next = newArr[i + 1]
+                newArr[i] = next, newArr[i + 1] = current;
+            }
+        }
+    }
+    return newArr;
+};
