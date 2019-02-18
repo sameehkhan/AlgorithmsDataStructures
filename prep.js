@@ -45,5 +45,5 @@ function primeFactorization(num) {
             return factors;
         }
     }
-    return [num];
+    return [num]; 
 }
