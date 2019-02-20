@@ -87,3 +87,31 @@ Array.prototype.bubbleSort = function (func) {
     }
     return newArr;
 };
+
+// ClosestValueInBst
+function findClosestValueInBst(tree, target) {
+    let closest = tree.value
+    return bstHelper(tree, target, closest)
+
+}
+
+function bstHelper(tree, target, closest) {
+    while (tree != null) {
+        if (Math.abs(target - closest) > Math.abs(target - tree.value)) {
+            closest = tree.value;
+        }
+        if (target < tree.value) {
+            tree = tree.left;
+        } else if (target > tree.value) {
+            tree = tree.right
+        } else {
+            return closest;
+        }
+
+
+    }
+    return closest;
+}
+
+// Do not edit the line below.
+exports.findClosestValueInBst = findClosestValueInBst;
