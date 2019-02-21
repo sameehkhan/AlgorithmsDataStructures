@@ -114,3 +114,20 @@ function bstHelper(tree, target, closest) {
 
 // Do not edit the line below.
 exports.findClosestValueInBst = findClosestValueInBst;
+
+Array.prototype.myReverse = function () {
+    for (let i = 0; i < this.length; i++) {
+        this.push(this.shift(0));
+    }
+    return this;
+}
+
+Array.prototype.myJoin = function (separator = '') {
+    let str = "";
+    debugger
+    this.forEach((el, idx) => {
+        str += `${el}`;
+        if (idx < this.length - 1) str += separator;
+    });
+    return str;
+}
