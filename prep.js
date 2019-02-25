@@ -71,7 +71,7 @@ Array.prototype.bubbleSort = function (func) {
 
     if (!func) {
         func = (x, y) => {
-            return x <= y ? -1 : 1
+            return x <= y ? -1 : 1;
         }
     }
 
@@ -91,8 +91,7 @@ Array.prototype.bubbleSort = function (func) {
 // ClosestValueInBst
 function findClosestValueInBst(tree, target) {
     let closest = tree.value
-    return bstHelper(tree, target, closest)
-
+    return bstHelper(tree, target, closest);
 }
 
 function bstHelper(tree, target, closest) {
@@ -107,10 +106,8 @@ function bstHelper(tree, target, closest) {
         } else {
             return closest;
         }
-
-
+   
     }
-     
     return closest;
 }
 
