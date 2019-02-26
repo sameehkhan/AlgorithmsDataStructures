@@ -159,3 +159,63 @@ class Node {
 
 // Do not edit the line below.
 exports.Node = Node;
+
+// Feel free to add new properties and methods to the class.
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    setHead(node) {
+        this.head = node;
+        node.prev = null;
+        node.next.prev = node.prev;
+        node.prev.next = node.next;
+    }
+
+    setTail(node) {
+        this.tail = node;
+        node.next = null;
+        node.prev = this.tail;
+        node.prev.next = node;
+
+
+    }
+
+    insertBefore(node, nodeToInsert) {
+        // set nodeToInsert.next = node, nodeToInsert.prev = node.prev
+        // node.prev.next = nodeToInsert
+    }
+
+    insertAfter(node, nodeToInsert) {
+        // set nodeToInsert.prev = node, nodeToInsert.next = node.next
+        // node.next = nodeToInsert
+    }
+
+    insertAtPosition(position, nodeToInsert) {
+        // Start at head, iterate while keeping track of position
+        // once, position is reached, grab node at that position then 
+        // insertBefore( nodeAtPosition, nodeToInsert)
+
+    }
+
+    removeNodesWithValue(value) {
+        //  if (containsNodeWithValue(value)), then remove(node)
+    }
+
+    remove(node) {
+        // Set its prev to its next, and next.prev to its prev, then set 
+        // its next and prev to null
+    }
+
+    containsNodeWithValue(value) {
+        // Write your code here.
+        // Iterate over linked list, check for specific value, start
+        // with head
+
+    }
+}
+
+// Do not edit the line below.
+exports.DoublyLinkedList = DoublyLinkedList;
