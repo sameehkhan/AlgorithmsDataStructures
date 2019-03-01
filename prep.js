@@ -186,17 +186,20 @@ class DoublyLinkedList {
     insertBefore(node, nodeToInsert) {
         // set nodeToInsert.next = node, nodeToInsert.prev = node.prev
         // node.prev.next = nodeToInsert
+
     }
 
     insertAfter(node, nodeToInsert) {
         // set nodeToInsert.prev = node, nodeToInsert.next = node.next
         // node.next = nodeToInsert
+
     }
 
     insertAtPosition(position, nodeToInsert) {
         // Start at head, iterate while keeping track of position
         // once, position is reached, grab node at that position then 
         // insertBefore( nodeAtPosition, nodeToInsert)
+        
 
     }
 
