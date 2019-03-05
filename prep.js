@@ -161,6 +161,7 @@ class Node {
 exports.Node = Node;
 
 // Feel free to add new properties and methods to the class.
+// Feel free to add new properties and methods to the class.
 class DoublyLinkedList {
     constructor() {
         this.head = null;
@@ -168,17 +169,11 @@ class DoublyLinkedList {
     }
 
     setHead(node) {
-        this.head = node;
-        node.prev = null;
-        node.next.prev = node.prev;
-        node.prev.next = node.next;
+
     }
 
     setTail(node) {
-        this.tail = node;
-        node.next = null;
-        node.prev = this.tail;
-        node.prev.next = node;
+
 
 
     }
@@ -186,20 +181,17 @@ class DoublyLinkedList {
     insertBefore(node, nodeToInsert) {
         // set nodeToInsert.next = node, nodeToInsert.prev = node.prev
         // node.prev.next = nodeToInsert
-
     }
 
     insertAfter(node, nodeToInsert) {
         // set nodeToInsert.prev = node, nodeToInsert.next = node.next
         // node.next = nodeToInsert
-
     }
 
     insertAtPosition(position, nodeToInsert) {
         // Start at head, iterate while keeping track of position
         // once, position is reached, grab node at that position then 
         // insertBefore( nodeAtPosition, nodeToInsert)
-        
 
     }
 
@@ -210,15 +202,53 @@ class DoublyLinkedList {
     remove(node) {
         // Set its prev to its next, and next.prev to its prev, then set 
         // its next and prev to null
+        // Check if head or tail
+
+        if (node === this.head) {
+            this.head = this.head.next
+        }
+        if (node === this.tail) {
+            this.tail = this.tail.prev
+        }
+
+        this.removeNode(node)
+
+    }
+
+    removeNode(node) {
+        if (node.next != null) {
+            node.next.prev = node.prev;
+        }
+
+        if (node.prev != null) {
+            node.prev.next = node.next;
+        }
+
+        node.prev = null;
+        node.next = null;
     }
 
     containsNodeWithValue(value) {
         // Write your code here.
         // Iterate over linked list, check for specific value, start
         // with head
+        let node = this.head;
+        while (node != null) {
+            if (node.value === value) {
+                return true
+            } else {
+                node = node.next;
+            }
+        }
+
+        return false;
 
     }
 }
+
+// Do not edit the line below.
+exports.DoublyLinkedList = DoublyLinkedList;
+
 
 // Do not edit the line below.
 exports.DoublyLinkedList = DoublyLinkedList;
