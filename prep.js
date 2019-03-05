@@ -197,6 +197,16 @@ class DoublyLinkedList {
 
     removeNodesWithValue(value) {
         //  if (containsNodeWithValue(value)), then remove(node)
+        let node = this.head;
+
+        while (node != null) {
+            const pointer = node;
+            node = node.next;
+
+            if (pointer.value == value) {
+                remove(pointer)
+            }
+        }
     }
 
     remove(node) {
