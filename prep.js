@@ -179,13 +179,35 @@ class DoublyLinkedList {
     }
 
     insertBefore(node, nodeToInsert) {
-        // set nodeToInsert.next = node, nodeToInsert.prev = node.prev
-        // node.prev.next = nodeToInsert
+        if (nodeToInsert == this.head && nodeToInsert == this.tail) return;
+        this.remove(nodeToInsert);
+
+        nodeToInsert.next = node;
+        nodeToInsert.prev = node.prev;
+
+        if (node.prev == null) {
+            this.head = nodeToInsert;
+        } else {
+            node.prev.next = nodeToInsert;
+            node.prev = nodeToInsert;
+        }
+
+
     }
 
     insertAfter(node, nodeToInsert) {
-        // set nodeToInsert.prev = node, nodeToInsert.next = node.next
-        // node.next = nodeToInsert
+        if (nodeToInsert == this.head && nodeToInsert == this.tail) return;
+        this.remove(nodeToInsert);
+
+        nodeToInsert.next = node.next;
+        nodeToInsert.prev = node;
+        if (node.next == null) {
+            this.tail = nodeToInsert;
+        } else {
+            node.next = nodeToInsert;
+            node.next.prev = nodeToInsert;
+        }
+
     }
 
     insertAtPosition(position, nodeToInsert) {
