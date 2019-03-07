@@ -169,7 +169,7 @@ class DoublyLinkedList {
     }
 
     setHead(node) {
-
+        this.insertAtPosition(0, node);
     }
 
     setTail(node) {
