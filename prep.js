@@ -214,6 +214,17 @@ class DoublyLinkedList {
         // Start at head, iterate while keeping track of position
         // once, position is reached, grab node at that position then 
         // insertBefore( nodeAtPosition, nodeToInsert)
+        let current = 1;
+        let node = this.head;
+
+        while (node != null) {
+            if (current == position) {
+                this.insertBefore(node, nodeToInsert)
+            }
+            current += 1;
+            node = node.next;
+        }
+        this.insertAfter(this.tail, nodeToInsert)
 
     }
 
