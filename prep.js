@@ -173,9 +173,10 @@ class DoublyLinkedList {
     }
 
     setTail(node) {
-
-
-
+        if (this.tail == null) {
+            this.setHead(node)
+        }
+        this.insertAfter(this.tail, node)
     }
 
     insertBefore(node, nodeToInsert) {
