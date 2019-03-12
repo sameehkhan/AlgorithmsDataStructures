@@ -308,7 +308,24 @@ exports.DoublyLinkedList = DoublyLinkedList;
 
 function getNthFib(n) {
     // Write your code here.
+    // 0,1,1,2,3,5
+    let nums = {}
+    // Memoized with object to hold values everytime they come up
+    // goes from O(2^n) to O(n) time, O(n) because every second call is O(1) because it is in the hash
+
+    // O(n) space
+    if (n === 1) return 0;
+    if (n === 2) return 1;
+    if (n === 3) return 1;
+
+    if (n in nums) {
+        return n;
+    } else {
+        nums[n] = getNthFib(n - 1) + getNthFib(n - 2)
+        return nums[n]
+    }
 }
 
 // Do not edit the line below.
 exports.getNthFib = getNthFib;
+
