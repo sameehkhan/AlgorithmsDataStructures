@@ -175,7 +175,7 @@ class DoublyLinkedList {
             this.tail = node;
             return;
         }
-        
+
 
         this.insertBefore(this.head, node)
     }  
@@ -304,3 +304,11 @@ exports.DoublyLinkedList = DoublyLinkedList;
 
 // Do not edit the line below.
 exports.DoublyLinkedList = DoublyLinkedList;
+
+
+function getNthFib(n) {
+    // Write your code here.
+}
+
+// Do not edit the line below.
+exports.getNthFib = getNthFib;
