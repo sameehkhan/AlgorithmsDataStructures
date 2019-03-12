@@ -329,3 +329,23 @@ function getNthFib(n) {
 // Do not edit the line below.
 exports.getNthFib = getNthFib;
 
+function getNthFib(n) {
+    // Write your code here.
+    // 0,1,1,2,3,5
+    if (n === 1) return 0;
+    if (n === 2) return 1;
+    let counter = 2;
+
+    const reducer = (acc, val) => acc + val;
+    let arr = [0, 1];
+    let nextNum;
+
+    while (counter < n) {
+        nextNum = arr.reduce(reducer)
+        arr.shift();
+        arr.push(nextNum);
+        counter += 1;
+    }
+
+    return nextNum;
+}
