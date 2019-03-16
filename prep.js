@@ -347,5 +347,6 @@ function getNthFib(n) {
         counter += 1;
     }
 
+
     return nextNum;
 }
