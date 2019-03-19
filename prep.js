@@ -132,6 +132,25 @@ Array.prototype.myJoin = function (separator = '') {
     return str;
 }
 
+function caesarCipher(str, shift) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    str = str.split("")
+    let ciphered = '';
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === " ") {
+            ciphered += " "
+            i += 1;
+        }
+        let old_idx = alphabet.indexOf(str[i]);
+        let new_idx = (old_idx + shift) % 26
+        let letter = alphabet[new_idx]
+        ciphered += letter;
+    }
+
+    return ciphered;
+}
+
 // Do not edit the class below except
 // for the depthFirstSearch method.
 // Feel free to add new properties
