@@ -426,3 +426,31 @@ function getCount(str) {
 
     return vowelsCount;
 }
+
+function GetSum(a, b) {
+    let i;
+
+    let sum = 0;
+
+    if (a > b) {
+        i = b;
+        return Sum(b, a)
+    } else {
+        i = a;
+        return Sum(a, b)
+    }
+
+}
+
+function Sum(a, b) {
+    let i = a;
+    let sum = 0;
+
+    while (i <= b) {
+        sum += i;
+        i += 1;
+    }
+
+    return sum;
+}
+
