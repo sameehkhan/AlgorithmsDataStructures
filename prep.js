@@ -454,3 +454,15 @@ function Sum(a, b) {
     return sum;
 }
 
+Array.prototype.median = function () {
+    if (this.length < 1) return null;
+
+    sorted = this.sort();
+    let mid = Math.floor(sorted.length / 2)
+
+    if (sorted.length % 2 === 0) {
+        return (sorted[mid] + sorted[mid - 1]) / 2;
+    } else {
+        return sorted[mid];
+    }
+};
