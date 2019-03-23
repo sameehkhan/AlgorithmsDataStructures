@@ -132,6 +132,24 @@ Array.prototype.myJoin = function (separator = '') {
     return str;
 }
 
+
+function titleize(title) {
+    const little = ['a', 'and', 'of', 'over', 'the'];
+    words = title.split(" ");
+    titled = [];
+
+    words.forEach(function (el, i) {
+        if (i === 0) {
+            titled.push(el.slice(0, 1).toUpperCase() + el.slice(1));
+        } else if (little.indexOf(el) >= 0) {
+            titled.push(el.toLowerCase());
+        } else {
+            titled.push(el.slice(0, 1).toUpperCase() + el.slice(1));
+        }
+    });
+    return titled.join(" ");
+}
+
 function caesarCipher(str, shift) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     str = str.split("")
