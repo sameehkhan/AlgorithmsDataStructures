@@ -387,3 +387,12 @@ function getNthFib(n) {
 
     return nextNum;
 }
+
+function countDevelopers(list) {
+    // your awesome code here :)
+    var counter = 0;
+    list.forEach(dev => {
+        if (dev.continent === 'Europe' && dev.language === 'JavaScript') counter += 1;
+    })
+    return counter;
+}
