@@ -396,3 +396,22 @@ function countDevelopers(list) {
     })
     return counter;
 }
+
+function digital_root(n) {
+    while (n > 9) {
+        n = rootHelper(n)
+    }
+
+    return n;
+}
+
+function rootHelper(n) {
+    root = 0;
+
+    while (n > 0) {
+        root += n % 10;
+        n = Math.floor(n / 10);
+    }
+
+    return root;
+}
