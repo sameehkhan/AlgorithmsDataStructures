@@ -415,3 +415,14 @@ function rootHelper(n) {
 
     return root;
 }
+
+function getCount(str) {
+    var vowelsCount = 0;
+    let vowels = new Set(['a', 'e', 'i', 'o', 'u'])
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.has(str[i])) vowelsCount += 1;
+    }
+
+    return vowelsCount;
+}
