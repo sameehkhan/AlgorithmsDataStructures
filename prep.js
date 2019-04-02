@@ -467,3 +467,18 @@ Array.prototype.median = function () {
     }
 };
 
+Array.prototype.rotate = function (num) {
+    let rotations;
+    if (typeof num === 'undefined') {
+        num = 1;
+    }
+    if (num > 0) {
+        rotations = num % this.length;
+    } else {
+        rotations = this.length - (Math.abs(num) % this.length);
+    }
+    for (let i = 0; i < rotations; i++) {
+        this.push(this.shift(0));
+    }
+    return this;
+}
