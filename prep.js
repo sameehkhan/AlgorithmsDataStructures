@@ -482,3 +482,48 @@ Array.prototype.rotate = function (num) {
     }
     return this;
 }
+
+function findThreeLargestNumbers(array) {
+    // Write your code here.
+    let largest = [null, null, null]
+
+    array.forEach(n => updateLargest(largest, n))
+
+    return largest;
+}
+
+function updateLargest(array, n) {
+    if (n > array[2] || array[2] === null) {
+        updateArray(array, n, 2);
+    } else if (n > array[1] || array[1] === null) {
+        updateArray(array, n, 1);
+    } else if (n > array[0] || array[0] === null) {
+        updateArray(array, n, 0);
+    }
+}
+
+function updateArray(array, n, idx) {
+    let temp1;
+    let temp2;
+
+    if (idx === 2) {
+        temp1 = array[2];
+        temp2 = array[1];
+        array[1] = temp1;
+        array[0] = temp2;
+        array[2] = n;
+    } else if (idx === 1) {
+        temp1 = array[1]
+        array[0] = temp1;
+        array[1] = n;
+    } else {
+        array[0] = n;
+    }
+
+}
+
+
+
+
+// Do not edit the line below.
+exports.findThreeLargestNumbers = findThreeLargestNumbers;
