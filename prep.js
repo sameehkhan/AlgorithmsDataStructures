@@ -527,3 +527,39 @@ function updateArray(array, n, idx) {
 
 // Do not edit the line below.
 exports.findThreeLargestNumbers = findThreeLargestNumbers;
+
+function threeNumberSum(array, targetSum) {
+    // Write your code here.
+    // initialize triplets = []
+    // iterate over array
+    // within that array have a while loop
+    //in while loop set curr num to arr[i] and pointers
+    // at i + 1 and arr.length -1
+    // if CurrNum + L + R < targetSum move left pointer
+    // if CurrNum + L + R > targetSum move right pointer
+    let triplets = [];
+    array.sort((a, b) => a - b)
+
+    for (let i = 0; i < array.length - 2; i++) {
+        let left = i + 1;
+        let right = array.length - 1;
+        while (left < right) {
+            let currSum = array[i] + array[left] + array[right]
+            if (currSum === targetSum) {
+                triplets.push([array[i], array[left], array[right]])
+
+                left += 1;
+                right -= 1;
+
+            } else if (currSum < targetSum) {
+                left++;
+            } else if (currSum > targetSum) {
+                right--;
+            }
+        }
+    }
+    return triplets;
+}
+
+// Do not edit the line below.
+exports.threeNumberSum = threeNumberSum;
