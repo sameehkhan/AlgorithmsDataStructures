@@ -539,7 +539,6 @@ function threeNumberSum(array, targetSum) {
     // if CurrNum + L + R > targetSum move right pointer
     let triplets = [];
     array.sort((a, b) => a - b)
-
     for (let i = 0; i < array.length - 2; i++) {
         let left = i + 1;
         let right = array.length - 1;
@@ -563,3 +562,25 @@ function threeNumberSum(array, targetSum) {
 
 // Do not edit the line below.
 exports.threeNumberSum = threeNumberSum;
+
+
+var strStr = function (haystack, needle) {
+    if (haystack.includes(needle)) {
+        return indexNeedle(haystack, needle)
+    } else {
+        return -1;
+    }
+};
+
+var indexNeedle = function (haystack, needle) {
+    var len = needle.length;
+    if (len === 0) return 0;
+
+    for (var i = 0; i < haystack.length; i++) {
+        if (haystack[i] === needle[0]) {
+            if (haystack.slice(i, i + len) === needle) {
+                return i;
+            }
+        }
+    }
+}
